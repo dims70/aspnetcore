@@ -1,0 +1,270 @@
+﻿@using MakeItBuilderAspCore.Models.Entities;
+@{
+
+    ViewBag.Title = "Корзина";
+}
+<div class="wrapper page-basket page-basket--delivery other-page">
+    <section class="navigation">
+        <div class="navigation__container container">
+            <div class="header__basket navigation__basket basket">
+                <a href="basket-delivery.html" class="header__basket basket__link">
+                    <i class="basket__icon icon icon-buy d-none"></i>
+                    <span>Корзина</span>
+                    <div class="basket__number number">
+                        <span>4</span>
+                    </div>
+                </a>
+            </div>
+            <nav class="navigation__swiper swiper">
+                <ul class="navigation__swiper-wrapper swiper-wrapper">
+                    <li class="navigation__swiper-slide swiper-slide"><a href="index.html" class="navigation__link">Холодные закуски</a></li>
+                    <li class="navigation__swiper-slide swiper-slide"><a href="index.html" class="navigation__link">Горячие закуски</a></li>
+                    <li class="navigation__swiper-slide swiper-slide"><a href="index.html" class="navigation__link navigation__link--3">Мясные блюда</a></li>
+                    <li class="navigation__swiper-slide swiper-slide"><a href="#" class="navigation__link navigation__link--4">Супы</a></li>
+                    <li class="navigation__swiper-slide swiper-slide"><a href="#" class="navigation__link navigation__link--5">Рыбные блюда</a></li>
+                    <li class="navigation__swiper-slide swiper-slide"><a href="#" class="navigation__link navigation__link--6">Гриль меню</a></li>
+                    <li class="navigation__swiper-slide swiper-slide"><a href="#" class="navigation__link navigation__link--7">Фирменные блюда</a></li>
+                    <li class="navigation__swiper-slide swiper-slide"><a href="#" class="navigation__link navigation__link--8">Напитки</a></li>
+                </ul>
+            </nav>
+        </div>
+    </section>
+
+    <section class="basket-products">
+        <div class="basket-products__container container">
+
+            <div class="path">
+                <a href="index.html" class="path__icon-wrapper">
+                    <i class="icon path__icon icon-green-arrow-left"></i>
+                </a>
+                <span class="path__link">к выбору блюда</span>
+            </div>
+
+            <h2 class="h2-title basket-products__title">КОРЗИНА<span>(в корзине @Basket.dishes.Count товара)</span></h2>
+            <ul class="basket-products__list">
+                <li class="basket-products__item">
+                    <div class="basket-products__left">
+                        <div class="basket-products__img">
+                            <img src="/img/basket-product-img.png" alt="/img">
+                        </div>
+                    </div>
+
+                    <div class="basket-products__right">
+                        <div class="basket-products__center">
+                            <h3 class="basket-products__name"><a href="#">ПИЦЦА ДВОЙНАЯ ПЕППЕРОНИ</a></h3>
+                            <span>
+                                Кальмары, мидии, креветки, сыр маасдам,
+                                красный лук, микс оливок, базилик, соус песто
+                            </span>
+                        </div>
+
+                        <div class="basket-products__end">
+                            <div class="basket-products__count-wrapper">
+                                <button class="basket-products__btn basket-products__btn--count basket-products__btn--minus">
+                                    <i class="icon basket-products__icon icon-minus"></i>
+                                </button>
+                                <div class="basket-products__item-count">1</div>
+                                <button class="basket-products__btn basket-products__btn--count basket-products__btn--plus">
+                                    <i class="icon basket-products__icon icon-plus"></i>
+                                </button>
+                            </div>
+                            <p class="basket-products__price"><span data-price="1640">1640</span> ₽</p>
+                            <button class="basket-products__btn basket-products__btn--clear">
+                                <i class="icon basket-products__icon icon-clear"></i>
+                            </button>
+                        </div>
+                    </div>
+
+                    <svg width="1096" height="1" viewBox="0 0 1096 1" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <line x1="4.37114e-08" y1="0.5" x2="1096" y2="0.500096" stroke="url(#paint0_linear_69_498)" />
+                        <defs>
+                            <linearGradient id="paint0_linear_69_498" x1="1096" y1="1.0001" x2="0" y2="1" gradientUnits="userSpaceOnUse">
+                                <stop stop-color="white" stop-opacity="0" />
+                                <stop offset="1" stop-color="white" stop-opacity="0.2" />
+                            </linearGradient>
+                        </defs>
+                    </svg>
+                </li>
+
+                <li class="basket-products__item">
+                    <div class="basket-products__left">
+                        <div class="basket-products__img">
+                            <img src="/img/basket-product-img.png" alt="/img">
+                        </div>
+                    </div>
+
+                    <div class="basket-products__right">
+                        <div class="basket-products__center">
+                            <h3 class="basket-products__name"><a href="#">ПИЦЦА ДВОЙНАЯ ПЕППЕРОНИ</a></h3>
+                            <span>
+                                Кальмары, мидии, креветки, сыр маасдам,
+                                красный лук, микс оливок, базилик, соус песто
+                            </span>
+                        </div>
+
+                        <div class="basket-products__end">
+                            <div class="basket-products__count-wrapper">
+                                <button class="basket-products__btn basket-products__btn--count basket-products__btn--minus">
+                                    <i class="icon basket-products__icon icon-minus"></i>
+                                </button>
+                                <div class="basket-products__item-count">1</div>
+                                <button class="basket-products__btn basket-products__btn--count basket-products__btn--plus">
+                                    <i class="icon basket-products__icon icon-plus"></i>
+                                </button>
+                            </div>
+                            <p class="basket-products__price"><span data-price="1640">1640</span> ₽</p>
+                            <button class="basket-products__btn basket-products__btn--clear">
+                                <i class="icon basket-products__icon icon-clear"></i>
+                            </button>
+                        </div>
+                    </div>
+
+                    <svg width="1096" height="1" viewBox="0 0 1096 1" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <line x1="4.37114e-08" y1="0.5" x2="1096" y2="0.500096" stroke="url(#paint0_linear_69_498)" />
+                        <defs>
+                            <linearGradient id="paint0_linear_69_498" x1="1096" y1="1.0001" x2="0" y2="1" gradientUnits="userSpaceOnUse">
+                                <stop stop-color="white" stop-opacity="0" />
+                                <stop offset="1" stop-color="white" stop-opacity="0.2" />
+                            </linearGradient>
+                        </defs>
+                    </svg>
+                </li>
+            </ul>
+        </div>
+    </section>
+
+    <section class="add-products">
+        <div class="add-products__container container">
+            <h2 class="h2-title add-products__title">ДОБАВИТЬ К ЗАКАЗУ</h2>
+            <ul class="add-products__list">
+                <li class="add-products__item">
+                    <div class="add-products__left">
+                        <div class="add-products__img">
+                            <img src="/img/add-product-img.png" alt="/img">
+                        </div>
+                    </div>
+                    <div class="add-products__right">
+                        <h4 class="add-products__item-title">КВАС АНАНАСОВЫЙ</h4>
+                        <div class="add-products_wrp">
+                            <div class="add-products__add">
+                                <span>Добавить</span>
+                                <button class="basket-products__btn basket-products__btn--count basket-products__btn--plus">
+                                    <i class="icon basket-products__icon icon-plus"></i>
+                                </button>
+                            </div>
+                            <p class="add-products__price">1640 ₽</p>
+                        </div>
+                    </div>
+                    <svg width="1" height="235" viewBox="0 0 1 235" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <line x1="0.5" y1="235" x2="0.50001" y2="-2.18557e-08" stroke="url(#paint0_linear_69_505)" />
+                        <defs>
+                            <linearGradient id="paint0_linear_69_505" x1="1.00001" y1="0" x2="1" y2="235" gradientUnits="userSpaceOnUse">
+                                <stop stop-color="white" stop-opacity="0" />
+                                <stop offset="1" stop-color="white" stop-opacity="0.2" />
+                            </linearGradient>
+                        </defs>
+                    </svg>
+                </li>
+                <li class="add-products__item">
+                    <div class="add-products__left">
+                        <div class="add-products__img">
+                            <img src="/img/add-product-img.png" alt="/img">
+                        </div>
+                    </div>
+                    <div class="add-products__right">
+                        <h4 class="add-products__item-title">КВАС АНАНАСОВЫЙ</h4>
+                        <div class="add-products_wrp">
+                            <div class="add-products__add">
+                                <span>Добавить</span>
+                                <button class="basket-products__btn basket-products__btn--count basket-products__btn--plus">
+                                    <i class="icon basket-products__icon icon-plus"></i>
+                                </button>
+                            </div>
+                            <p class="add-products__price">1640 ₽</p>
+                        </div>
+                    </div>
+                    <svg width="1" height="235" viewBox="0 0 1 235" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <line x1="0.5" y1="235" x2="0.50001" y2="-2.18557e-08" stroke="url(#paint0_linear_69_505)" />
+                        <defs>
+                            <linearGradient id="paint0_linear_69_505" x1="1.00001" y1="0" x2="1" y2="235" gradientUnits="userSpaceOnUse">
+                                <stop stop-color="white" stop-opacity="0" />
+                                <stop offset="1" stop-color="white" stop-opacity="0.2" />
+                            </linearGradient>
+                        </defs>
+                    </svg>
+                </li>
+                <li class="add-products__item">
+                    <div class="add-products__left">
+                        <div class="add-products__img">
+                            <img src="/img/add-product-img.png" alt="/img">
+                        </div>
+                    </div>
+                    <div class="add-products__right">
+                        <h4 class="add-products__item-title">КВАС АНАНАСОВЫЙ</h4>
+                        <div class="add-products_wrp">
+                            <div class="add-products__add">
+                                <span>Добавить</span>
+                                <button class="basket-products__btn basket-products__btn--count basket-products__btn--plus">
+                                    <i class="icon basket-products__icon icon-plus"></i>
+                                </button>
+                            </div>
+                            <p class="add-products__price">1640 ₽</p>
+                        </div>
+                    </div>
+                    <svg width="1" height="235" viewBox="0 0 1 235" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <line x1="0.5" y1="235" x2="0.50001" y2="-2.18557e-08" stroke="url(#paint0_linear_69_505)" />
+                        <defs>
+                            <linearGradient id="paint0_linear_69_505" x1="1.00001" y1="0" x2="1" y2="235" gradientUnits="userSpaceOnUse">
+                                <stop stop-color="white" stop-opacity="0" />
+                                <stop offset="1" stop-color="white" stop-opacity="0.2" />
+                            </linearGradient>
+                        </defs>
+                    </svg>
+                </li>
+                <li class="add-products__item">
+                    <div class="add-products__left">
+                        <div class="add-products__img">
+                            <img src="/img/add-product-img.png" alt="/img">
+                        </div>
+                    </div>
+                    <div class="add-products__right">
+                        <h4 class="add-products__item-title">КВАС АНАНАСОВЫЙ</h4>
+                        <div class="add-products_wrp">
+                            <div class="add-products__add">
+                                <span>Добавить</span>
+                                <button class="basket-products__btn basket-products__btn--count basket-products__btn--plus">
+                                    <i class="icon basket-products__icon icon-plus"></i>
+                                </button>
+                            </div>
+                            <p class="add-products__price">1640 ₽</p>
+                        </div>
+                    </div>
+                    <svg width="1" height="235" viewBox="0 0 1 235" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <line x1="0.5" y1="235" x2="0.50001" y2="-2.18557e-08" stroke="url(#paint0_linear_69_505)" />
+                        <defs>
+                            <linearGradient id="paint0_linear_69_505" x1="1.00001" y1="0" x2="1" y2="235" gradientUnits="userSpaceOnUse">
+                                <stop stop-color="white" stop-opacity="0" />
+                                <stop offset="1" stop-color="white" stop-opacity="0.2" />
+                            </linearGradient>
+                        </defs>
+                    </svg>
+                </li>
+            </ul>
+        </div>
+    </section>
+
+    <div class="last-price">
+        <div class="last-price__container container">
+            <div class="last-price__text">
+                <p class="last-price__price">Итого: <strong>500 ₽</strong> </p>
+                <p>
+                    До бесплатной доставки не хватет: <span class="last-price__green">100 ₽</span>
+                </p>
+                <p>
+                    Минимальная сума заказа 1500 ₽
+                </p>
+            </div>
+            <a href="checkout.html" class="last-price__btn">Оформить заказ</a>
+        </div>
+    </div>
+</div>

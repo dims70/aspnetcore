@@ -1,0 +1,27 @@
+﻿@model List<MakeItBuilderAspCore.Models.Entities.Stock> 
+<section class="stock">
+    <div class="stock__container container">
+        <h2 class="h2-title del__title stock__title" style="margin-top:50px">АКЦИИ</h2>
+        <svg width="1440" height="1" viewBox="0 0 1440 1" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <line y1="0.5" x2="1440" y2="0.5" stroke="url(#paint0_linear_72_11)" />
+            <defs>
+                <linearGradient id="paint0_linear_72_11" x1="1440" y1="1" x2="0" y2="1" gradientUnits="userSpaceOnUse">
+                    <stop stop-color="white" stop-opacity="0" />
+                    <stop offset="1" stop-color="white" stop-opacity="0.2" />
+                </linearGradient>
+            </defs>
+        </svg>
+
+        <ul class="stock__list">
+            @foreach (var item in Model)
+            {
+                <li class="stock__item stock-item">
+                    <img src="@item.urlToImg" alt="image">
+                    <a href="#">@item.Title</a>
+                    <p>@item.Description</p>
+                    <span>@item.dateExp</span>
+                </li>
+            }
+        </ul>
+    </div>
+</section>

@@ -1,0 +1,118 @@
+﻿@using MakeItBuilderAspCore.Models.Entities;   
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>@ViewBag.Title</title>
+
+    <!-- slider SwiperJs -->
+    <link rel="stylesheet" href="https://unpkg.com/swiper@7/swiper-bundle.min.css" />
+
+    <!-- jQueryUI -->
+    <link rel="stylesheet" href="https://code.jquery.com/ui/1.13.0/themes/base/jquery-ui.css">
+
+    <!-- style -->
+    <link rel="stylesheet" href="/css/style.min.css">
+
+</head>
+<body>
+    <div class="wrapper">
+        <header class="header">
+            <div class="header__container container">
+
+                <div class="mobile">
+                    <div class="gmbruger">
+                        <svg width="25" height="17" viewBox="0 0 25 17" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <rect y="14" width="25" height="3" rx="1.5" fill="#65906C" />
+                            <rect y="7" width="25" height="3" rx="1.5" fill="#65906C" />
+                            <rect width="25" height="3" rx="1.5" fill="#65906C" />
+                        </svg>
+                    </div>
+                    <span>МЕНЮ</span>
+                    <div class="mobile__menu-wrp mobile__menu-wrp--disable">
+                        <i class="popup-exit icon popup-basket__icon icon-clear"></i>
+                        <ul class="mobile__menu">
+                            <li class="mobile__menu-item"><a href="index.html">Главная</a></li>
+                            <li class="mobile__menu-item"><a href="stock.html">Акции</a></li>
+                            <li class="mobile__menu-item"><a href="delivery.html">Доставка</a></li>
+                        </ul>
+                    </div>
+                </div>
+
+                <a href="/" class="header__logo logo">Logos</a>
+
+                <div class="header__search search">
+                    <form action="/">
+                        <i class="search__icon-location icon icon-location"></i>
+                        <input type="text" placeholder="Введите адрес доставки">
+                        <i class="search__icon-search icon icon-search"></i>
+                    </form>
+                </div>
+
+                <div class="header__contact header-contact">
+                    <div class="header-contact__icon-wrapper">
+                        <i class="header-contact__icon icon icon-calling"></i>
+                    </div>
+                    <div class="header-contact__text">
+                        <span>Контакты:</span>
+                        <b>+7 (917) 510-57-59</b>
+                    </div>
+                </div>
+
+                <div class="header__basket basket">
+                    <!-- style -->
+                    <a asp-action="Basket" class="header__basket basket__link">
+                        <i class="basket__icon icon icon-buy"></i>
+                        <span>Корзина</span>
+                        <div class="basket__number number">
+                            <span>@Basket.dishes.Count</span>
+                        </div>
+                    </a>
+                </div>
+
+            </div>
+        </header>
+        @RenderBody()
+        <footer class="footer">
+            <div class="footer__container container">
+                <button class="arrow-top">
+                    <i class="icon icon-arrow-top"></i>
+                </button>
+                <div class="footer__center">
+                    <a href="index.html" class="footer__logo logo">Logos</a>
+                    <span>
+                        © ООО СК «АПШЕРОН»
+                        Все права защищены. 2010-2020
+                    </span>
+                    <ul>
+                        <li><a href="#">Пользовательское соглашение</a></li>
+                        <li><a href="#">Карта сайта</a></li>
+                        <li><a href="#">Политика конфиденциальности</a></li>
+                    </ul>
+                </div>
+                <ul class="footer__menu">
+                    <li><a href="#">О ресторане</a></li>
+                    <li><a href="#">Условия доставки</a></li>
+                    <li><a href="#">Возврат товара</a></li>
+                    <li><a asp-action="Stocks">Акции</a></li>
+                </ul>
+
+            </div>
+        </footer>
+        @*<div class="gradiend-down"></div>*@
+    </div>
+    <div class="popup-basket__bg d-none"></div>
+
+    <!-- jQuery -->
+    <script src="https://code.jquery.com/jquery-3.3.1.min.js" integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8=" crossorigin="anonymous"></script>
+
+    <!-- slider SwiperJs -->
+    <script src="https://unpkg.com/swiper@7/swiper-bundle.min.js"></script>
+
+    <!-- jQueryUI -->
+    <script src="https://code.jquery.com/ui/1.13.0/jquery-ui.js"></script>
+
+    <script src="/js/scripts.js"></script>
+</body>
+</html>

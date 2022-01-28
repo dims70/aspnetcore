@@ -1,0 +1,42 @@
+﻿@using MakeItBuilderAspCore.Models.Entities;
+@{}
+@model (List<TypeDish>,bool);
+@{int i = 2;}
+
+<section class="navigation">
+    <div class="navigation__container container">
+        @if (Model.Item2 == true)
+        {
+            <div class="header__basket navigation__basket basket">
+                <!-- style -->
+                <a asp-action="Basket" class="header__basket basket__link">
+                    <i class="basket__icon icon icon-buy d-none"></i>
+                    <span>Корзина</span>
+                    <div class="basket__number number">
+                        <span>@Basket.dishes.Count</span>
+                    </div>
+                </a>
+            </div>
+        }
+        <nav class="navigation__swiper swiper">
+            <ul class="navigation__swiper-wrapper swiper-wrapper">
+
+                @foreach (var item in Model.Item1)
+                {
+                    if (item.nameType == "Холодные закуски")
+                    {
+                        <li class="navigation__swiper-slide navigation__swiper-slide--active swiper-slide">
+                            <span class="navigation__link navigation__link--1">Холодные закуски</span>
+                        </li>
+                        continue;
+                    }
+
+                    <li class="navigation__swiper-slide swiper-slide">
+                        <span class="navigation__link navigation__link--@i">@item.nameType</span>
+                    </li>
+                    { i++; }
+                }
+            </ul>
+        </nav>
+    </div>
+</section>
