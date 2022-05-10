@@ -5,15 +5,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>@ViewBag.Title</title>
-
-    <!-- slider SwiperJs -->
-    <link rel="stylesheet" href="https://unpkg.com/swiper@7/swiper-bundle.min.css" />
-
-    <!-- jQueryUI -->
-    <link rel="stylesheet" href="https://code.jquery.com/ui/1.13.0/themes/base/jquery-ui.css">
-
-    <!-- style -->
-    <link rel="stylesheet" href="/css/style.css">
+    @await Html.PartialAsync("Layout/CssPartial") 
 
 </head>
 <body>
@@ -104,16 +96,7 @@
     </div>
     <div class="popup-basket__bg d-none"></div>
     @RenderSection("modalDeliveryNo", false)
-    <!-- jQuery -->
-    <script src="https://code.jquery.com/jquery-3.3.1.min.js" integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8=" crossorigin="anonymous"></script>
-
-    <!-- slider SwiperJs -->
-    <script src="https://unpkg.com/swiper@7/swiper-bundle.min.js"></script>
-
-    <!-- jQueryUI -->
-    <script src="https://code.jquery.com/ui/1.13.0/jquery-ui.js"></script>
-
-    <script src="/js/scripts.js"></script>
+    @await Html.PartialAsync("Layout/ScriptsPartial")
     @RenderSection("scripts",false)
 </body>
 </html>

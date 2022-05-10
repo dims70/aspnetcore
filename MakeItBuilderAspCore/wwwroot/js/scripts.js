@@ -411,5 +411,3 @@ $(".custom-option").on("click", function () {
     }
   };
 })();
-
-
