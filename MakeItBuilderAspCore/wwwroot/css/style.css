@@ -778,7 +778,7 @@ svg path {
 
 .product-list__title{
 	margin-bottom: 50px;
-	margin-left: 62px;
+	/*margin-left: 62px;*/
 	box-sizing: border-box;
 	padding-left: 23px;
 	position: relative;
@@ -797,7 +797,7 @@ svg path {
 
 .product-list__swiper{
 	width: 100%;
-	overflow: visible;
+	overflow: hidden;
 	margin-bottom: 50px;
 	position: relative;
 }
@@ -829,17 +829,18 @@ svg path {
 }
 
 .product-list__swiper-slide{
-	/*border:  1px solid red;*/
-/*	width: 329px;
-	height: 385px;*/
+	display:flex;
 }
 
 
-
-.card{
+.card {
+	display: flex;
+	flex-direction: column;
+	flex-grow: 1;
+	justify-content: space-between;
 	background: linear-gradient(90deg, #494544 0%, #504B4A 100%);
 	border-radius: 10px;
-	min-height:  385px;
+	min-height: 385px;
 	transition: filter 200ms ease;
 	position: relative;
 }
@@ -978,9 +979,10 @@ svg path {
 	display: flex;
 }
 
-.our-cafe{
+.our-cafe {
 	position: relative;
 	z-index: 2;
+	box-shadow:0px 0px 10px 4px rgb(0 0 0 / 55%)
 }
 
 .our-cafe__container{
@@ -1039,10 +1041,10 @@ svg path {
 	transition: all 200ms ease;
 }
 
-.our-cafe__btn:hover{
-	transition: all 200ms ease;
-	box-shadow: 0px 5px 10px rgb(255 255 255 / 30%);
-}
+	.our-cafe__btn:hover {
+		transition: all 200ms ease;
+		box-shadow: 0px 0px 10px 4px rgb(255 255 255 / 30%);
+	}
 
 .our-cafe__list{
 	width: 471px;
@@ -1532,10 +1534,11 @@ svg path {
 		width: 50%
 	}
 
-	.our-cafe__item{
+	.our-cafe__item {
 		width: 180px;
 		height: 180px;
 		padding-top: 26px;
+		border-radius: 20px;
 	}
 	.our-cafe__item span{
 		font-size: 16px;
@@ -1629,6 +1632,7 @@ svg path {
 		width: 160px;
 		height: 160px;
 		padding-top: 16px;
+		border-radius:20px;
 	}
 	.our-cafe__svg-wrapper{
 		margin-bottom: 16px;
@@ -4155,4 +4159,32 @@ border-radius: 0 0 4px 4px;
 		max-width: 90%;
 	}
 
+}
+
+
+/*ћодальное окно невозможности доставки */
+.delivery_time_no {
+	background: #94bbe9;
+	border-radius: 11px;
+	font-family: inherit;
+	border: 0 !important;
+}
+	.delivery_time_no .ui-dialog-titlebar {
+		background: #eeaeca;
+		border-radius: 7px;
+		border: 0;
+	}
+	.delivery_time_no #dialog {
+		text-align: center;
+		font-size: large;
+	}
+
+/*”величение текста в типах при наведении*/
+.navigation__link:hover {
+	transform: scale(1.1);
+	transition: 1s;
+}
+.navigation__link:not(hover) {
+	transform: scale(1.0);
+	transition: 1s;
 }

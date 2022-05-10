@@ -13,7 +13,7 @@
     <link rel="stylesheet" href="https://code.jquery.com/ui/1.13.0/themes/base/jquery-ui.css">
 
     <!-- style -->
-    <link rel="stylesheet" href="/css/style.min.css">
+    <link rel="stylesheet" href="/css/style.css">
 
 </head>
 <body>
@@ -33,9 +33,9 @@
                     <div class="mobile__menu-wrp mobile__menu-wrp--disable">
                         <i class="popup-exit icon popup-basket__icon icon-clear"></i>
                         <ul class="mobile__menu">
-                            <li class="mobile__menu-item"><a href="index.html">Главная</a></li>
-                            <li class="mobile__menu-item"><a href="stock.html">Акции</a></li>
-                            <li class="mobile__menu-item"><a href="delivery.html">Доставка</a></li>
+                            <li class="mobile__menu-item"><a asp-action="Index">Главная</a></li>
+                            <li class="mobile__menu-item"><a asp-action="Stocks">Акции</a></li>
+                            <li class="mobile__menu-item"><a asp-action="TermsDelivery">Доставка</a></li>
                         </ul>
                     </div>
                 </div>
@@ -80,7 +80,7 @@
                     <i class="icon icon-arrow-top"></i>
                 </button>
                 <div class="footer__center">
-                    <a href="index.html" class="footer__logo logo">Logos</a>
+                    <a asp-action="Index" class="footer__logo logo">Logos</a>
                     <span>
                         © ООО СК «АПШЕРОН»
                         Все права защищены. 2010-2020
@@ -93,7 +93,7 @@
                 </div>
                 <ul class="footer__menu">
                     <li><a href="#">О ресторане</a></li>
-                    <li><a href="#">Условия доставки</a></li>
+                    <li><a asp-action="TermsDelivery">Условия доставки</a></li>
                     <li><a href="#">Возврат товара</a></li>
                     <li><a asp-action="Stocks">Акции</a></li>
                 </ul>
@@ -103,7 +103,7 @@
         @*<div class="gradiend-down"></div>*@
     </div>
     <div class="popup-basket__bg d-none"></div>
-
+    @RenderSection("modalDeliveryNo", false)
     <!-- jQuery -->
     <script src="https://code.jquery.com/jquery-3.3.1.min.js" integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8=" crossorigin="anonymous"></script>
 
@@ -114,5 +114,6 @@
     <script src="https://code.jquery.com/ui/1.13.0/jquery-ui.js"></script>
 
     <script src="/js/scripts.js"></script>
+    @RenderSection("scripts",false)
 </body>
 </html>

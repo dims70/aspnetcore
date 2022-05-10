@@ -1,0 +1,89 @@
+﻿
+@{
+    ViewBag.Title = "Условия доставки";
+}
+<section class="delivery del" style="margin-top:20px">
+    <div class="del__container container">
+        <h2 class="h2-title del__title">Условия доставки</h2>
+        <div class="del__left">
+            <div id="accordion" class="acc">
+                <h3 class="acc__button">У наших курьеров всегда должна быть сдача!</h3>
+                <div class="acc__content">
+                    Мы очень внимательно следим за качеством нашей работы, поэтому, если у вас будут какие-либо замечания или предложения, то обязательно сообщайте их нам
+                </div>
+                <h3 class="acc__button">Вам что-то не довезли?</h3>
+                <div class="acc__content">
+                    Мы очень внимательно следим за качеством нашей работы, поэтому, если у вас будут какие-либо замечания или предложения, то обязательно сообщайте их нам
+                </div>
+                <h3 class="acc__button">Не понравился продукт?</h3>
+                <div class="acc__content">
+                    Мы очень внимательно следим за качеством нашей работы, поэтому, если у вас будут какие-либо замечания или предложения, то обязательно сообщайте их нам
+                </div>
+                <h3 class="acc__button">Если появились замечания</h3>
+                <div class="acc__content">
+                    Мы очень внимательно следим за качеством нашей работы, поэтому, если у вас будут какие-либо замечания или предложения, то обязательно сообщайте их нам
+                </div>
+                <h3 class="acc__button">Оплата Visa, MasterCard и МИР</h3>
+                <div class="acc__content">
+                    Мы очень внимательно следим за качеством нашей работы, поэтому, если у вас будут какие-либо замечания или предложения, то обязательно сообщайте их нам
+                </div>
+                <h3 class="acc__button">Реквизиты</h3>
+                <div class="acc__content">
+                    Мы очень внимательно следим за качеством нашей работы, поэтому, если у вас будут какие-либо замечания или предложения, то обязательно сообщайте их нам
+                </div>
+            </div>
+        </div>
+        <div class="del__right del__map-img">
+            <div class="img"></div>
+        </div>
+        <div class="del__time">
+            <p class="del__text-block">
+                <b>График работы доставки:</b>
+                <span>с 10:00-21:00</span>
+            </p>
+            <p class="del__text-block">
+                <b>График работы кафе:</b>
+                <span>с 08:00-21:00</span>
+            </p>
+        </div>
+        <div class="del__info del__text-block">
+            <b>Минимальный заказ:</b>
+            <span>
+                Бесплатная доставка пешим курьером при сумме заказа от 400 ₽
+                Доставка оператором такси от любой суммы заказа - по тарифам
+                перевозчика.
+            </span>
+        </div>
+
+    </div>
+
+</section>
+@if (!Context.Request.Cookies.Keys.Contains("deliveryModalHide"))
+{
+    @section scripts {
+        <script>
+            // Проверка доставки на время - режим работы доставки 10ч-21ч
+            (() => {
+                let currDate = new Date();
+                if (currDate.getHours() > 21 || currDate.getHours() < 10)
+                    $("#dialog").dialog({
+                        modal: true,
+                        resizable: false,
+                        draggable: false,
+                        classes: {
+                            "ui-dialog": "delivery_time_no"
+                        },
+                        close: function () {
+                            document.cookie = `${encodeURIComponent("deliveryModalHide")}=${encodeURIComponent(1)}; max-age=36000`;
+                        }
+                    });
+            })();
+        </script>
+    }
+    @section modalDeliveryNo{
+        <div id="dialog" title="Не доставляется">
+            <p>Доставка сейчас не работает (10:00-21:00) <span style="font-size:20px">:(</span></p>
+        </div>
+    }
+}
+

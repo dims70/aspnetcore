@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\Dimas\\source\\repos\\MakeItBuilderAspCore\\MakeItBuilderAspCore\\MakeItBuilderAspCore.csproj": {}
+    "C:\\Users\\Dimas\\source\\repos\\MakeItBuilderAspCore\\aspnetcore\\MakeItBuilderAspCore\\MakeItBuilderAspCore.csproj": {}
   },
   "projects": {
-    "C:\\Users\\Dimas\\source\\repos\\MakeItBuilderAspCore\\MakeItBuilderAspCore\\MakeItBuilderAspCore.csproj": {
+    "C:\\Users\\Dimas\\source\\repos\\MakeItBuilderAspCore\\aspnetcore\\MakeItBuilderAspCore\\MakeItBuilderAspCore.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\Dimas\\source\\repos\\MakeItBuilderAspCore\\MakeItBuilderAspCore\\MakeItBuilderAspCore.csproj",
+        "projectUniqueName": "C:\\Users\\Dimas\\source\\repos\\MakeItBuilderAspCore\\aspnetcore\\MakeItBuilderAspCore\\MakeItBuilderAspCore.csproj",
         "projectName": "MakeItBuilderAspCore",
-        "projectPath": "C:\\Users\\Dimas\\source\\repos\\MakeItBuilderAspCore\\MakeItBuilderAspCore\\MakeItBuilderAspCore.csproj",
+        "projectPath": "C:\\Users\\Dimas\\source\\repos\\MakeItBuilderAspCore\\aspnetcore\\MakeItBuilderAspCore\\MakeItBuilderAspCore.csproj",
         "packagesPath": "C:\\Users\\Dimas\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\Dimas\\source\\repos\\MakeItBuilderAspCore\\MakeItBuilderAspCore\\obj\\",
+        "outputPath": "C:\\Users\\Dimas\\source\\repos\\MakeItBuilderAspCore\\aspnetcore\\MakeItBuilderAspCore\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
           "C:\\Users\\Dimas\\AppData\\Roaming\\NuGet\\NuGet.Config",
@@ -40,6 +40,10 @@
         "netcoreapp3.1": {
           "targetAlias": "netcoreapp3.1",
           "dependencies": {
+            "Microsoft.AspNetCore.Mvc.NewtonsoftJson": {
+              "target": "Package",
+              "version": "[3.1.22, )"
+            },
             "Microsoft.VisualStudio.Web.CodeGeneration.Design": {
               "target": "Package",
               "version": "[3.1.5, )"

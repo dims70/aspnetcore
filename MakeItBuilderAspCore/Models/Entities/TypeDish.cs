@@ -6,7 +6,8 @@ namespace MakeItBuilderAspCore.Models.Entities
 {
     public class TypeDish
     {   [BsonId]
-        public ObjectId _id { get; set; }
+        [BsonRepresentation(BsonType.ObjectId)]
+        public string _id { get; set; }
         [Display(Name = "Тип блюда")]
         public string nameType { get; set; }
     }

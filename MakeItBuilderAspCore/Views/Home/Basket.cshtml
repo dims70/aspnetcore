@@ -42,10 +42,14 @@
 
             <h2 class="h2-title basket-products__title">КОРЗИНА<span>(в корзине @Basket.dishes.Count товара)</span></h2>
             <ul class="basket-products__list">
-                <li class="basket-products__item">
+                @if (Basket.dishes.Count != 0)
+                {
+                    foreach (var item in Basket.dishes)
+                    {
+                        <li class="basket-products__item">
                     <div class="basket-products__left">
                         <div class="basket-products__img">
-                            <img src="/img/basket-product-img.png" alt="/img">
+                            <img src="@item.urlToImg" alt="/img">
                         </div>
                     </div>
 
@@ -53,8 +57,7 @@
                         <div class="basket-products__center">
                             <h3 class="basket-products__name"><a href="#">ПИЦЦА ДВОЙНАЯ ПЕППЕРОНИ</a></h3>
                             <span>
-                                Кальмары, мидии, креветки, сыр маасдам,
-                                красный лук, микс оливок, базилик, соус песто
+                                @item.Description
                             </span>
                         </div>
 
@@ -68,9 +71,9 @@
                                     <i class="icon basket-products__icon icon-plus"></i>
                                 </button>
                             </div>
-                            <p class="basket-products__price"><span data-price="1640">1640</span> ₽</p>
+                            <p class="basket-products__price"><span data-price="@item.Price">@item.Price</span> ₽</p>
                             <button class="basket-products__btn basket-products__btn--clear">
-                                <i class="icon basket-products__icon icon-clear"></i>
+                                <i class="icon basket-products__icon icon-clear"  data-id="@item._id"></i>
                             </button>
                         </div>
                     </div>
@@ -85,50 +88,14 @@
                         </defs>
                     </svg>
                 </li>
+                    }
+                }
+            else
+            {         
+                    <li><h2 align="center" style="color:white"> В корзине пусто.</h2></li>
+            }
 
-                <li class="basket-products__item">
-                    <div class="basket-products__left">
-                        <div class="basket-products__img">
-                            <img src="/img/basket-product-img.png" alt="/img">
-                        </div>
-                    </div>
 
-                    <div class="basket-products__right">
-                        <div class="basket-products__center">
-                            <h3 class="basket-products__name"><a href="#">ПИЦЦА ДВОЙНАЯ ПЕППЕРОНИ</a></h3>
-                            <span>
-                                Кальмары, мидии, креветки, сыр маасдам,
-                                красный лук, микс оливок, базилик, соус песто
-                            </span>
-                        </div>
-
-                        <div class="basket-products__end">
-                            <div class="basket-products__count-wrapper">
-                                <button class="basket-products__btn basket-products__btn--count basket-products__btn--minus">
-                                    <i class="icon basket-products__icon icon-minus"></i>
-                                </button>
-                                <div class="basket-products__item-count">1</div>
-                                <button class="basket-products__btn basket-products__btn--count basket-products__btn--plus">
-                                    <i class="icon basket-products__icon icon-plus"></i>
-                                </button>
-                            </div>
-                            <p class="basket-products__price"><span data-price="1640">1640</span> ₽</p>
-                            <button class="basket-products__btn basket-products__btn--clear">
-                                <i class="icon basket-products__icon icon-clear"></i>
-                            </button>
-                        </div>
-                    </div>
-
-                    <svg width="1096" height="1" viewBox="0 0 1096 1" fill="none" xmlns="http://www.w3.org/2000/svg">
-                        <line x1="4.37114e-08" y1="0.5" x2="1096" y2="0.500096" stroke="url(#paint0_linear_69_498)" />
-                        <defs>
-                            <linearGradient id="paint0_linear_69_498" x1="1096" y1="1.0001" x2="0" y2="1" gradientUnits="userSpaceOnUse">
-                                <stop stop-color="white" stop-opacity="0" />
-                                <stop offset="1" stop-color="white" stop-opacity="0.2" />
-                            </linearGradient>
-                        </defs>
-                    </svg>
-                </li>
             </ul>
         </div>
     </section>

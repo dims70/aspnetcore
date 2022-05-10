@@ -23,7 +23,7 @@ namespace MakeItBuilderAspCore.Controllers
         }
         public async Task<IActionResult> Index() => View((await _typeDishes.GetTypeDishes(), await Task.Run(() => _dishes.GetDishes()
           .Result
-          .Where(x => x.typeDish == ObjectId.Parse("61e52ffad095affaabdf78d8")).ToList())));
+          .Where(x => x.typeDish == "61e52ffad095affaabdf78d8").ToList())));
         #region TEST
         //[HttpPost]
         //public IActionResult DeleteDishes(RepositoryDishes repositoryDishes,string id)
@@ -42,7 +42,7 @@ namespace MakeItBuilderAspCore.Controllers
             return View();
         }
 
-
+        public IActionResult TermsDelivery() => View();
         public IActionResult Basket() => View();
             
 

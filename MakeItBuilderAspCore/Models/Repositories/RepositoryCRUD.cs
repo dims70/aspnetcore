@@ -12,8 +12,8 @@ namespace MakeItBuilderAspCore.Models.Repositories
             .GetCollection<Type>(nameCollection);
 
         public async void Create(Type item) => await _service.InsertOneAsync(item);
-        public async Task<Type> GetById(ObjectId objectId) => await _service
-            .FindAsync(new BsonDocument("_id", objectId.ToString()))
+        public async Task<Type> GetById(string objectId) => await _service
+            .FindAsync(new BsonDocument("_id", objectId))
             .Result
             .FirstOrDefaultAsync();
 
@@ -22,7 +22,7 @@ namespace MakeItBuilderAspCore.Models.Repositories
         {
         }
         public async void Delete(string deleteId) => await _service.
-            DeleteOneAsync(new BsonDocument("_id",ObjectId.Parse(deleteId)));
+            DeleteOneAsync(new BsonDocument("_id",deleteId));
         
             //Builders<BsonDocument>.Filter.Eq("_id", ObjectId.Parse(deleteId)
     }

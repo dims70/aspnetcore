@@ -7,7 +7,8 @@ namespace MakeItBuilderAspCore.Models.Entities
 {
     public class Dish
     {   [BsonId]
-        public ObjectId _id { get; set; }
+        [BsonRepresentation(BsonType.ObjectId)]
+        public string _id { get; set; }
         [Display(Name="Наименование")]
         [Required]
         public string Name { get; set; }
@@ -34,7 +35,7 @@ namespace MakeItBuilderAspCore.Models.Entities
         public decimal Price { get; set; }
 
         public string urlToImg { get; set; }
-
-        public ObjectId typeDish { get; set; }
+        [BsonRepresentation(BsonType.ObjectId)]
+        public string typeDish { get; set; }
     }
     }

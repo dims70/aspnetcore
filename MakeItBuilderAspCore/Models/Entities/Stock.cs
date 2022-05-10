@@ -6,7 +6,8 @@ namespace MakeItBuilderAspCore.Models.Entities
 {
     public class Stock
     {   [BsonId]
-        public ObjectId _id { get; set; }
+        [BsonRepresentation(BsonType.ObjectId)]
+        public string _id { get; set; }
         [Required]
         public string Title { get; set; }
         [Required]
