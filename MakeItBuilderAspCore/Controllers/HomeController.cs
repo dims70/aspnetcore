@@ -1,5 +1,6 @@
 ﻿using MakeItBuilderAspCore.Models;
 using MakeItBuilderAspCore.Models.Repositories;
+using MakeItBuilderAspCore.Models.ViewModels;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.Extensions.Logging;
 using MongoDB.Bson;
@@ -21,9 +22,10 @@ namespace MakeItBuilderAspCore.Controllers
             _stock = stock;
             _dishes = dishes;
         }
-        public async Task<IActionResult> Index() => View((await _typeDishes.GetTypeDishes(), await Task.Run(() => _dishes.GetDishes()
-          .Result
-          .Where(x => x.typeDish == "61e52ffad095affaabdf78d8").ToList())));
+        public IActionResult Index() => View(new IndexViewModel(_typeDishes,_dishes));
+        ////public async Task<IActionResult> Index() => View((await _typeDishes.GetTypeDishes(), await Task.Run(() => _dishes.GetDishes()
+        ////  .Result
+        ////  .Where(x => x.typeDish == "61e52ffad095affaabdf78d8").ToList())));
         #region TEST
         //[HttpPost]
         //public IActionResult DeleteDishes(RepositoryDishes repositoryDishes,string id)

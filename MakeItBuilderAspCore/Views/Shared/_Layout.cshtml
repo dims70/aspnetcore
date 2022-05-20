@@ -31,15 +31,19 @@
                         </ul>
                     </div>
                 </div>
-
-                <a href="/" class="header__logo logo">Logos</a>
+                <div class="logos">
+                    <img src="~/img/logos.png" width="30" height="30" title="Logos" />
+                    <a href="/" class="header__logo logo">Logos</a>
+                </div>
 
                 <div class="header__search search">
                     <form action="/">
                         <i class="search__icon-location icon icon-location"></i>
-                        <input type="text" placeholder="Введите адрес доставки">
+                        <input class="suggest" id="suggest" type="text" placeholder="Введите адрес доставки" name="adress_delivery">
                         <i class="search__icon-search icon icon-search"></i>
                     </form>
+                        @*<span class="suggest-close" id="suggest-close"></span>*@
+                        <div class="suggest-results" id="suggest-results"></div>
                 </div>
 
                 <div class="header__contact header-contact">

@@ -31,7 +31,7 @@ namespace MakeItBuilderAspCore.Controllers
         public async Task<IActionResult> Get(string id)
         {
             Basket.AddItemBasket((await repositoryDishes
-            .GetDishes())
+            .GetDishesAsync())
             .SingleOrDefault(x => x._id == id));
             return Ok();
         }

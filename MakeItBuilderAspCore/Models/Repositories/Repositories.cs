@@ -11,16 +11,23 @@ namespace MakeItBuilderAspCore.Models.Repositories
     public class RepositoryDishes : RepositoryCRUD<Dish>
     {
         public RepositoryDishes() : base(nameCollection:"Dish") {/*пустой*/}
-        public async Task<List<Dish>> GetDishes() => await DbService.GetDatabase()
-            .GetCollection<Dish>("Dish")
-            .FindAsync<Dish>(new BsonDocument() { }).Result.ToListAsync();
+        public async Task<IEnumerable<Dish>> GetDishesAsync()
+        { var awaitDishes = await DbService.GetDatabase()
+                          .GetCollection<Dish>("Dish")
+                          .FindAsync<Dish>(new BsonDocument() { });
+            return awaitDishes.ToEnumerable();
+        }
     }
     public class RepositoryTypeDishes:RepositoryCRUD<TypeDish>
     {
         public RepositoryTypeDishes():base(nameCollection:"TypeDish"){/*пустой*/}
-        public async Task<List<TypeDish>> GetTypeDishes() => await DbService.GetDatabase()
-            .GetCollection<TypeDish>("TypeDish")
-            .FindAsync<TypeDish>(new BsonDocument() { }).Result.ToListAsync();
+        public async Task<IEnumerable<TypeDish>> GetTypeDishesAsync()
+        {
+            var awaitTypeDish = await DbService.GetDatabase()
+                  .GetCollection<TypeDish>("TypeDish")
+                  .FindAsync<TypeDish>(new BsonDocument() { });
+            return awaitTypeDish.ToEnumerable();
+        }
     }
     public class RepositoryStock : RepositoryCRUD<Stock>
     {

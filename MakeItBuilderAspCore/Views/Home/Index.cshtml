@@ -1,5 +1,5 @@
-﻿@using MakeItBuilderAspCore.Models.Entities;
-@model (List<TypeDish>,List<Dish>)
+﻿@using MakeItBuilderAspCore.Models.ViewModels;
+@model IndexViewModel
 @{
     ViewData["Title"] = "LOGOS FOOD - Главная";
 }
@@ -15,7 +15,7 @@
     </div>
 </section>
 
-@await Html.PartialAsync("_typedish",(Model.Item1,true))
+@await Html.PartialAsync("_typedish",(Model.TypeDishes,true))
 
 <section class="product-list product-list--1">
     <div class="product-list__container container">
@@ -23,7 +23,7 @@
 
         <div class="swiper product-list__swiper">
             <ul class="swiper-wrapper product-list__swiper-wrapper">
-               @foreach (var item in Model.Item2)
+               @foreach (var item in Model.Dishes)
                {
                 <li class="product-list__swiper-slide swiper-slide">
                     <div class="card">
