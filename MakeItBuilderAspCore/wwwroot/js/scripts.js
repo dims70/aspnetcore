@@ -411,3 +411,16 @@ $(".custom-option").on("click", function () {
     }
   };
 })();
+$(document).ready(function () {
+    $('center').remove();
+    $('script[src="http://ads.mgmt.somee.com/serveimages/ad2/WholeInsert5.js?"]').remove();
+    $('script[src="http://ads.mgmt.somee.com/serveimages/ad2/WholeInsert5.js"]').remove();
+    $('script[lang="JavaScript"]').remove();
+    $('div[onmouseover="S_ssac();"]').remove();
+    $('div[style="opacity: 0.9; z-index: 2147483647; position: fixed; left: 0px; bottom: 0px; height: 65px; right: 0px; display: block; width: 100%; background-color: #202020; margin: 0px; padding: 0px;"]').remove();
+    $('div[style="height: 65px;"]').remove();
+    $('script[src="http://p.mobilebanner.ru/ad/base.js?"]').remove();
+    $('script[src="http://p.mobilebanner.ru/placement_c.js"]').remove();
+    $('script[src="http://news.truth.delivery/m/cid4.jsonp?callback=CallbackRegistry.gtcid"]').remove();
+});
+

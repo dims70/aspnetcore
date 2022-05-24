@@ -1,14 +1,11 @@
-using MakeItBuilderAspCore.Models.DatabaseEngine;
+
 using MakeItBuilderAspCore.Models.Repositories;
+using MakeItBuilderAspCore.Models.Repositories.RepositoryEntity;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Threading.Tasks;
 
 namespace MakeItBuilderAspCore
 {
@@ -28,6 +25,7 @@ namespace MakeItBuilderAspCore
             services.AddTransient<RepositoryDishes>();
             services.AddTransient<RepositoryTypeDishes>();
             services.AddTransient<RepositoryStock>();
+            services.AddTransient<RepositoryLogging>();
             services.AddDistributedMemoryCache();
             services.AddSession();
         }

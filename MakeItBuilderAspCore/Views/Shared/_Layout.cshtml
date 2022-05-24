@@ -1,11 +1,11 @@
-﻿@using MakeItBuilderAspCore.Models.Entities;   
+﻿@using MakeItBuilderAspCore.Models.Entities;
 <!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>@ViewBag.Title</title>
-    @await Html.PartialAsync("Layout/CssPartial") 
+    @await Html.PartialAsync("Layout/CssPartial")
 
 </head>
 <body>
@@ -42,8 +42,8 @@
                         <input class="suggest" id="suggest" type="text" placeholder="Введите адрес доставки" name="adress_delivery">
                         <i class="search__icon-search icon icon-search"></i>
                     </form>
-                        @*<span class="suggest-close" id="suggest-close"></span>*@
-                        <div class="suggest-results" id="suggest-results"></div>
+                    @*<span class="suggest-close" id="suggest-close"></span>*@
+                    <div class="suggest-results" id="suggest-results"></div>
                 </div>
 
                 <div class="header__contact header-contact">
@@ -101,6 +101,27 @@
     <div class="popup-basket__bg d-none"></div>
     @RenderSection("modalDeliveryNo", false)
     @await Html.PartialAsync("Layout/ScriptsPartial")
-    @RenderSection("scripts",false)
+    @RenderSection("scripts", false)
+
+    @if (!Context.Request.Cookies.Keys.Contains("LTarget"))
+    {
+<script name="delta">
+                $.ajax({
+            type: "POST",
+            url: "@Url.Action("AddLogVisit", "Logging")",
+            data: {
+                        Identify: "@Context.Request.HttpContext.Connection.Id",
+                        IpRequest: "@Context.Request.HttpContext.Connection.RemoteIpAddress"},
+            success: function (res) {
+                        document.cookie = `${encodeURIComponent("LTarget")}=${encodeURIComponent("@Context.Request.HttpContext.Connection.Id")};path=/; max-age=36000`;
+                        $('script[name="delta"]').remove();
+                    },
+            error: function (req, status, error) {
+                        console.log(status);
+                    }
+        });
+</script>
+    }
 </body>
 </html>
+

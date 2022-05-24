@@ -60,47 +60,51 @@
 </section>
 @if (!Context.Request.Cookies.Keys.Contains("deliveryModalHide"))
 {
-    @section scripts {
-        <script>
-            // Проверка доставки на время - режим работы доставки 10ч-21ч
-            (() => {
-                let currDate = new Date();
-                if (currDate.getHours() > 21 || currDate.getHours() < 10)
-                    $("#dialog").dialog({
-                        modal: true,
-                        resizable: false,
-                        draggable: false,
-                        classes: {
-                            "ui-dialog": "delivery_time_no"
-                        },
-                        open: function () {
-                            $("html").css({
-                                "overflow": "hidden" });
-                        }
-                        ,
-                        close: function () {
-                            document.cookie = `${encodeURIComponent("deliveryModalHide")}=${encodeURIComponent(1)}; max-age=36000`;
-                            $("html").css({
-                                "overflow": "visible" });
-                        }
-                    });
-            })();
-        </script>
-    }
-    @section modalDeliveryNo{
-        <div id="dialog" title="Не доставляется">
-            <p>Сегодня мы уже не доставляем.</p>
-            <div class="popup-content-wrapper">
-                <span class="popup-content-small-text">
-                    Заказы принимаем до 20:50, доставляем
-                    с 8:30 до 21:30
-                </span>
-                <div class="popup-basket__img">
-                    <img src="~/img/icons/basket-not-delivery.svg" alt="img">
+    if (DateTime.Now.Hour+8 > 21 || DateTime.Now.Hour+8 < 10)
+    {
+        @section scripts {
+            <script>
+                // Проверка доставки на время - режим работы доставки 10ч-21ч
+                (() => {
+                    let currDate = new Date();
+                        $("#dialog").dialog({
+                            modal: true,
+                            resizable: false,
+                            draggable: false,
+                            classes: {
+                                "ui-dialog": "delivery_time_no"
+                            },
+                            open: function () {
+                                $("html").css({
+                                    "overflow": "hidden"
+                                });
+                            }
+                            ,
+                            close: function () {
+                                document.cookie = `${encodeURIComponent("deliveryModalHide")}=${encodeURIComponent(1)}; max-age=36000`;
+                                $("html").css({
+                                    "overflow": "visible"
+                                });
+                            }
+                        });
+                })();
+            </script>
+        }
+        @section modalDeliveryNo{
+            <div id="dialog" title="Не доставляется">
+                <p>Сегодня мы уже не доставляем.</p>
+                <div class="popup-content-wrapper">
+                    <span class="popup-content-small-text">
+                        Заказы принимаем до 20:50, доставляем
+                        с 8:30 до 21:30
+                    </span>
+                    <div class="popup-basket__img">
+                        <img src="~/img/icons/basket-not-delivery.svg" alt="img">
+                    </div>
                 </div>
+                <a href="index.html" class="popup-basket__btn">Посмотреть меню</a>
             </div>
-            <a href="index.html" class="popup-basket__btn">Посмотреть меню</a>
-        </div>
+        }
     }
 }
 
