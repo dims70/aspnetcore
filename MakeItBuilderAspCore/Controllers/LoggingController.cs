@@ -17,8 +17,11 @@ namespace MakeItBuilderAspCore.Controllers
         }
         [HttpPost]
         public IActionResult AddLogVisit(LoggingEntity entity)
-        {
-            repositoryLogging.AddScopeLogTarget(entity);
+        {   if(LoggingEntity.loggingEntity==null)
+            {
+                repositoryLogging.AddScopeLogTarget(entity);
+                LoggingEntity.loggingEntity = entity;
+            }
             return StatusCode(200);
         }
     }

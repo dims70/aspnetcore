@@ -1,20 +1,20 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\Dimas\\source\\repos\\MakeItBuilderAspCore\\aspnetcore\\MakeItBuilderAspCore\\MakeItBuilderAspCore.csproj": {}
+    "C:\\Users\\user\\source\\repos\\aspnetcore\\MakeItBuilderAspCore\\MakeItBuilderAspCore.csproj": {}
   },
   "projects": {
-    "C:\\Users\\Dimas\\source\\repos\\MakeItBuilderAspCore\\aspnetcore\\MakeItBuilderAspCore\\MakeItBuilderAspCore.csproj": {
+    "C:\\Users\\user\\source\\repos\\aspnetcore\\MakeItBuilderAspCore\\MakeItBuilderAspCore.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\Dimas\\source\\repos\\MakeItBuilderAspCore\\aspnetcore\\MakeItBuilderAspCore\\MakeItBuilderAspCore.csproj",
+        "projectUniqueName": "C:\\Users\\user\\source\\repos\\aspnetcore\\MakeItBuilderAspCore\\MakeItBuilderAspCore.csproj",
         "projectName": "MakeItBuilderAspCore",
-        "projectPath": "C:\\Users\\Dimas\\source\\repos\\MakeItBuilderAspCore\\aspnetcore\\MakeItBuilderAspCore\\MakeItBuilderAspCore.csproj",
-        "packagesPath": "C:\\Users\\Dimas\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\Dimas\\source\\repos\\MakeItBuilderAspCore\\aspnetcore\\MakeItBuilderAspCore\\obj\\",
+        "projectPath": "C:\\Users\\user\\source\\repos\\aspnetcore\\MakeItBuilderAspCore\\MakeItBuilderAspCore.csproj",
+        "packagesPath": "C:\\Users\\user\\.nuget\\packages\\",
+        "outputPath": "C:\\Users\\user\\source\\repos\\aspnetcore\\MakeItBuilderAspCore\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
-          "C:\\Users\\Dimas\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Users\\user\\AppData\\Roaming\\NuGet\\NuGet.Config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
         ],
         "originalTargetFrameworks": [
@@ -71,7 +71,7 @@
               "privateAssets": "all"
             }
           },
-          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\5.0.403\\RuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\5.0.408\\RuntimeIdentifierGraph.json"
         }
       }
     }

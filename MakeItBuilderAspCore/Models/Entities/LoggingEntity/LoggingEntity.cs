@@ -18,5 +18,12 @@ namespace MakeItBuilderAspCore.Models.LoggingEntity
         [Required]
         [Display(Name ="IP Адрес")]
         public string IpRequest { get; set; }
+        [Display(Name ="Дата запроса")]
+        public string DateRequest = DateTime.Now.ToShortDateString();
+        [Display(Name = "Ошибка")]
+        public string Error { get; set; }
+
+        [BsonIgnore]
+        public static LoggingEntity loggingEntity;
     }
 }

@@ -12,5 +12,10 @@ namespace MakeItBuilderAspCore.Models.Repositories.RepositoryEntity
         public RepositoryLogging() : base(nameCollection:"LogTarget") { /*пустой*/ }
         public void AddScopeLogTarget(LoggingEntity.LoggingEntity scope) 
             => CreateAsync(scope);
+
+        public async void AddErrorTarget(string error)
+        {
+            (await GetById(LoggingEntity.LoggingEntity.loggingEntity._id)).Error = error;
+        }
     }
 }
