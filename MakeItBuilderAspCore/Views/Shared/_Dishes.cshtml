@@ -1,0 +1,33 @@
+﻿@model IEnumerable<MakeItBuilderAspCore.Models.Entities.Dish>
+<ul class="swiper-wrapper product-list__swiper-wrapper">
+    @foreach (var item in Model)
+    {
+        <li class="product-list__swiper-slide swiper-slide">
+            <div class="card">
+                <div class="card__count">1</div>
+                <img src="@item.urlToImg" class="card__img" alt="card-image">
+                <div class="card__center">
+                    <h3 class="card__title">
+                        <a href="#">@item.Name</a> <span>Вес: @item.Weight г</span>
+                    </h3>
+                    <p class="card__text">
+                        @item.Description
+                    </p>
+                </div>
+                <div class="card__end">
+                    <button class="card__btn card__btn--count card__btn--minus" data-id="@item._id">
+                        <i class="icon card__icon icon-minus"></i>
+                    </button>
+                    <p class="card__price"><span data-price="620">@item.Price</span> ₽</p>
+                    <button class="card__btn card__btn--basket"  data-id="@item._id">
+                        <span>В корзину</span>
+                        <i class="icon icon-buy"></i>
+                    </button>
+                    <button class="card__btn card__btn--count card__btn--plus" data-id="@item._id">
+                        <i class="icon card__icon icon-plus"></i>
+                    </button>
+                </div>
+            </div>
+        </li>
+    }
+</ul>

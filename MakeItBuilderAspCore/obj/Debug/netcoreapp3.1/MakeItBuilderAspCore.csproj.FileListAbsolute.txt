@@ -403,3 +403,4 @@ C:\Users\user\Source\Repos\aspnetcore\MakeItBuilderAspCore\obj\Debug\netcoreapp3
 C:\Users\user\Source\Repos\aspnetcore\MakeItBuilderAspCore\obj\Debug\netcoreapp3.1\MakeItBuilderAspCore.dll
 C:\Users\user\Source\Repos\aspnetcore\MakeItBuilderAspCore\obj\Debug\netcoreapp3.1\MakeItBuilderAspCore.pdb
 C:\Users\user\Source\Repos\aspnetcore\MakeItBuilderAspCore\obj\Debug\netcoreapp3.1\MakeItBuilderAspCore.genruntimeconfig.cache
+C:\Users\user\source\repos\aspnetcore\MakeItBuilderAspCore\obj\Debug\netcoreapp3.1\Razor\Views\Shared\_Dishes.cshtml.g.cs

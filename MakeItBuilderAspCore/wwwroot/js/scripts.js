@@ -411,6 +411,24 @@ $(".custom-option").on("click", function () {
     }
   };
 })();
+
+//Добавление в корзину
+$('.card__btn--basket').on('click', (o) => {
+    console.log(o.currentTarget.getAttribute("data-id"));//получение id
+    console.log(o.currentTarget.parentNode.parentNode.querySelector(".card__count").textContent);//Получение кол-ва
+    //Отправка при 1 нажатии "в корзину"
+})
+//При +1
+$('.card__btn--plus').on('click', (o) => {
+    console.log(o.currentTarget.getAttribute("data-id"));//id
+    console.log(o.currentTarget.parentNode.parentNode.querySelector(".card__count").textContent);//Новое кол-во
+})
+//При -1
+$('.card__btn--minus').on('click', (o) => {
+    console.log(o.currentTarget.getAttribute("data-id"));//id
+    console.log(o.currentTarget.parentNode.parentNode.querySelector(".card__count").textContent);//Новое кол-во
+})
+
 $(document).ready(function () {
     $('center').remove();
     $('script[src="http://ads.mgmt.somee.com/serveimages/ad2/WholeInsert5.js?"]').remove();

@@ -15,47 +15,15 @@
     </div>
 </section>
 
-@await Html.PartialAsync("_typedish",(Model.TypeDishes,true))
+@await Html.PartialAsync("_Typedish",(Model.TypeDishes,true))
 
 <section class="product-list product-list--1">
     <div class="product-list__container container">
         <h2 class="h2-title product-list__title">ХОЛОДНЫЕ ЗАКУСКИ</h2>
 
         <div class="swiper product-list__swiper">
-            <ul class="swiper-wrapper product-list__swiper-wrapper">
-               @foreach (var item in Model.Dishes)
-               {
-                <li class="product-list__swiper-slide swiper-slide">
-                    <div class="card">
-                        <div class="card__count">1</div>
-                        <img src="@item.urlToImg" class="card__img" alt="card-image">
-                        <div class="card__center">
-                            <h3 class="card__title">
-                                <a href="#">@item.Name</a> <span>Вес: @item.Weight г</span>
-                            </h3>           
-                            <p class="card__text">
-                                @item.Description
-                            </p>
-                        </div>
-                        <div class="card__end">
-                            <button class="card__btn card__btn--count card__btn--minus">
-                                <i class="icon card__icon icon-minus"></i>
-                            </button>
-                            <p class="card__price"><span data-price="620">@item.Price</span> ₽</p>
-                            <button class="card__btn card__btn--basket">
-                                <span>В корзину</span>
-                                <i class="icon icon-buy"></i>
-                            </button>
-                            <button class="card__btn card__btn--count card__btn--plus">
-                                <i class="icon card__icon icon-plus"></i>
-                            </button>
-                        </div>
-                    </div>
-                </li>
-               }
-                
-                
-            </ul>
+
+               @await Html.PartialAsync("_Dishes",Model.Dishes) 
         </div>
 
     </div>
