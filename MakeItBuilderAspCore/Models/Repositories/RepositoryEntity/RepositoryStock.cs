@@ -9,8 +9,11 @@ namespace MakeItBuilderAspCore.Models.Repositories
 {
     public class RepositoryStock : RepositoryCRUD<Stock>
     {
-        public RepositoryStock() : base(nameCollection: "Stock") {/*пустой*/}
-        public async Task<List<Stock>> GetStocks() => await DbService.GetDatabase()
+        private readonly IDbContext dbContext;
+
+        public RepositoryStock(IDbContext dbContext) : base(nameCollection: "Stock", dbContext) 
+            => this.dbContext = dbContext;
+        public async Task<List<Stock>> GetStocks() => await dbContext.GetDatabase()
             .GetCollection<Stock>("Stock")
             .FindAsync<Stock>(new BsonDocument() { }).Result.ToListAsync();
     }

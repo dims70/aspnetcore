@@ -9,10 +9,13 @@ namespace MakeItBuilderAspCore.Models.Repositories
 {
     public class RepositoryTypeDishes:RepositoryCRUD<TypeDish>
     {
-        public RepositoryTypeDishes():base(nameCollection:"TypeDish"){/*пустой*/}
+        private readonly IDbContext dbContext;
+
+        public RepositoryTypeDishes(IDbContext dbContext) : base(nameCollection: "TypeDish", dbContext) 
+            => this.dbContext = dbContext;
         public async Task<IEnumerable<TypeDish>> GetTypeDishesAsync()
         {
-            var awaitTypeDish = await DbService.GetDatabase()
+            var awaitTypeDish = await dbContext.GetDatabase()
                   .GetCollection<TypeDish>("TypeDish")
                   .FindAsync<TypeDish>(new BsonDocument() { });
             return awaitTypeDish.ToEnumerable();

@@ -16,7 +16,7 @@ namespace MakeItBuilderAspCore.Models.ViewModels
 
         public  IndexViewModel(RepositoryTypeDishes _typeDishes, RepositoryDishes _dishes)
         {
-            TypeDishes =  InitTypeDishes(_typeDishes).Result;
+            TypeDishes = InitTypeDishes(_typeDishes).Result;
             Dishes = InitDishes(_dishes).Result;
         }
 

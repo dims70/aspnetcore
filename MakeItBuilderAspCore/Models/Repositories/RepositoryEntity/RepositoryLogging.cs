@@ -9,7 +9,8 @@ namespace MakeItBuilderAspCore.Models.Repositories.RepositoryEntity
 {
     public class RepositoryLogging : RepositoryCRUD<LoggingEntity.LoggingEntity>
     {
-        public RepositoryLogging() : base(nameCollection:"LogTarget") { /*пустой*/ }
+        public RepositoryLogging(IDbContext dbContext) : base(nameCollection:"LogTarget", dbContext) 
+        { }
         public void AddScopeLogTarget(LoggingEntity.LoggingEntity scope) 
             => CreateAsync(scope);
 

@@ -1,43 +1,33 @@
-﻿using MongoDB.Driver;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Threading.Tasks;
+﻿using Microsoft.Extensions.Configuration;
+using MongoDB.Driver;
 
 namespace MakeItBuilderAspCore.Models.DatabaseEngine
 {
-    public class DbService
+    public class DbService : IDbContext
     {
-        public static IMongoDatabase GetDatabase()
+        private readonly IConfiguration configuration;
+        public DbService(IConfiguration configuration) 
+            => this.configuration = configuration;
+        public IMongoDatabase GetDatabase()
         {
-
-
-            var temp = new MongoClient(LoadMongoSettings());
-                
-            return temp.GetDatabase("bpfrghop0m2rico");
+            var settings = LoadMongoSettings();
+            return new MongoClient(settings).GetDatabase(settings.Credential.Identity.Source);
         }
 
-        private static MongoClientSettings LoadMongoSettings()
+        private  MongoClientSettings LoadMongoSettings()
         {
-            string username = "ubi94eu279cgpxolusly";
-            string password = "1Zo8haOeMi8IIZy7rEZs";
-            string mongoDbAuthMechanism = "SCRAM-SHA-1";
-            MongoInternalIdentity internalIdentity =
-                      new MongoInternalIdentity("bpfrghop0m2rico", username);
-            PasswordEvidence passwordEvidence = new PasswordEvidence(password);
-            MongoCredential mongoCredential =
-                 new MongoCredential(mongoDbAuthMechanism,
-                         internalIdentity, passwordEvidence);
-            List<MongoCredential> credentials =
-                       new List<MongoCredential>() { mongoCredential };
+            MongoSettings mongoSettings = new(configuration);
 
+            MongoInternalIdentity internalIdentity = 
+                new(mongoSettings.GetMongoDatabase(), mongoSettings.GetUsername());
+            PasswordEvidence passwordEvidence = 
+                new(mongoSettings.GetPassword());
 
-            MongoClientSettings settings = new MongoClientSettings();
-            // comment this line below if your mongo doesn't run on secured mode
-            settings.Credentials = credentials;
-            string mongoHost = "bpfrghop0m2rico-mongodb.services.clever-cloud.com";
-            MongoServerAddress address = new MongoServerAddress(mongoHost);
-            settings.Server = address;
+            MongoClientSettings settings = new() {
+                Credential = new MongoCredential(MongoSettings.AUTH_MECHANISM,
+                         internalIdentity, passwordEvidence),
+                Server = new MongoServerAddress(mongoSettings.GetMongoHost())
+            };
             return settings;
         }
     }

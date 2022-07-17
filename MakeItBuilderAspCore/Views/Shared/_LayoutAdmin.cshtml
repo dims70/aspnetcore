@@ -1,0 +1,55 @@
+﻿<!DOCTYPE html>
+<html lang="en" theme="@(Context.Request.Cookies["theme"] ?? "light")">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Администратор</title>
+    <link rel="stylesheet" href="~/css/admin/style.css">
+</head>
+<body>
+    <div class="wrapper">
+        <div class="sidebar">
+            <div class="sidenav-content">
+                <div class="logo">Панель администратора v1.0</div>
+                <ul class="sidenav">
+                    <li class="active"><a href="#Dashboard">Инструменты</a></li>
+                    <li><a href="#Users">Пользователи</a></li>
+                    <li><a href="#Projects">Проекты</a></li>
+                    <li><a href="#Sales">Скидки</a></li>
+                </ul>
+                <a  class="settings-nav">Настройки</a>
+                <a href="#logout" class="logout-nav">Выход</a>
+            </div>
+        </div>
+        <div class="content">
+            <div class="row">
+                <div class="search">
+                    <input type="text" class="search-bar" placeholder="Найти...">
+                </div>
+
+                <div class="profile">
+                    <div class="user">
+                        <div class="user-image"><img src="~/img/admin/user-image.jpg" alt="user-image"></div>
+                        <div class="user-information">
+                            <div class="user-name">Kirill Vorobyov</div>
+                            <div class="user-status">Admin</div>
+                        </div>
+                    </div>
+                    <div class="notify">
+                        <img src="~/img/admin/notification.svg" alt="notification">
+                    </div>
+                </div>
+            </div>
+            <div id="content-main">
+                @RenderBody()
+            </div>
+        </div>
+    </div>
+     <!-- jQuery -->
+<script src="https://code.jquery.com/jquery-3.3.1.min.js" integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8=" crossorigin="anonymous"></script>
+ <script src="~/js/admin/scripts.js" ></script>
+</body>
+
+</html>

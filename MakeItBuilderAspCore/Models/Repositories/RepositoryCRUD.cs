@@ -6,11 +6,15 @@ using System.Threading.Tasks;
 
 namespace MakeItBuilderAspCore.Models.Repositories
 {
-    public class RepositoryCRUD<Type>
+    public abstract class RepositoryCRUD<Type> : IRepostitoryCRUD<Type>
+        where Type: class
     {
         private IMongoCollection<Type> _service;
-        public RepositoryCRUD(string nameCollection) => _service = DbService.GetDatabase()
-            .GetCollection<Type>(nameCollection);
+        public RepositoryCRUD(string nameCollection, IDbContext dbContext)
+        {
+            _service = dbContext.GetDatabase()
+                .GetCollection<Type>(nameCollection);
+        }
 
         public async void CreateAsync(Type item) 
             => await _service.InsertOneAsync(item);

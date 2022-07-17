@@ -1,6 +1,8 @@
 
+using MakeItBuilderAspCore.Models.DatabaseEngine;
 using MakeItBuilderAspCore.Models.Repositories;
 using MakeItBuilderAspCore.Models.Repositories.RepositoryEntity;
+using Microsoft.AspNetCore.Authentication.Cookies;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
 using Microsoft.Extensions.Configuration;
@@ -21,7 +23,9 @@ namespace MakeItBuilderAspCore
         // This method gets called by the runtime. Use this method to add services to the container.
         public void ConfigureServices(IServiceCollection services)
         {
+            services.AddAuthentication(CookieAuthenticationDefaults.AuthenticationScheme).AddCookie(options => options.LoginPath = "/Admin/Login");
             services.AddControllersWithViews().AddNewtonsoftJson();
+            services.AddTransient<IDbContext,DbService>();
             services.AddTransient<RepositoryDishes>();
             services.AddTransient<RepositoryTypeDishes>();
             services.AddTransient<RepositoryStock>();
@@ -47,6 +51,8 @@ namespace MakeItBuilderAspCore
             app.UseRouting();
 
             app.UseAuthorization();
+
+            app.UseAuthentication();
 
             app.UseEndpoints(endpoints =>
             {

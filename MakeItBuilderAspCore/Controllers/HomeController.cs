@@ -3,16 +3,13 @@ using MakeItBuilderAspCore.Models.Repositories;
 using MakeItBuilderAspCore.Models.ViewModels;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.Extensions.Logging;
-using MongoDB.Bson;
 using System.Diagnostics;
-using System.Linq;
 using System.Threading.Tasks;
 
 namespace MakeItBuilderAspCore.Controllers
 {
     public class HomeController : Controller
     {
-        private ILogger logger;
         private readonly RepositoryTypeDishes _typeDishes;
         private readonly RepositoryStock _stock;
         private readonly RepositoryDishes _dishes;
@@ -22,7 +19,7 @@ namespace MakeItBuilderAspCore.Controllers
             _stock = stock;
             _dishes = dishes;
         }
-        public IActionResult Index() => View(new IndexViewModel(_typeDishes,_dishes));
+        public IActionResult Index() => View(new IndexViewModel(_typeDishes, _dishes));
         ////public async Task<IActionResult> Index() => View((await _typeDishes.GetTypeDishes(), await Task.Run(() => _dishes.GetDishes()
         ////  .Result
         ////  .Where(x => x.typeDish == "61e52ffad095affaabdf78d8").ToList())));

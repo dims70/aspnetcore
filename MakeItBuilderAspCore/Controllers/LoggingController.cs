@@ -1,8 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Threading.Tasks;
-using MakeItBuilderAspCore.Models.LoggingEntity;
+﻿using MakeItBuilderAspCore.Models.LoggingEntity;
 using MakeItBuilderAspCore.Models.Repositories.RepositoryEntity;
 using Microsoft.AspNetCore.Mvc;
 
