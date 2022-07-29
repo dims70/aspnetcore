@@ -30,6 +30,7 @@ namespace MakeItBuilderAspCore
             services.AddTransient<RepositoryTypeDishes>();
             services.AddTransient<RepositoryStock>();
             services.AddTransient<RepositoryLogging>();
+            services.AddTransient<RepositoryUsers>();
             services.AddDistributedMemoryCache();
             services.AddSession();
         }
@@ -50,9 +51,8 @@ namespace MakeItBuilderAspCore
 
             app.UseRouting();
 
-            app.UseAuthorization();
-
             app.UseAuthentication();
+            app.UseAuthorization();
 
             app.UseEndpoints(endpoints =>
             {

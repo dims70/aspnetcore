@@ -3,10 +3,10 @@
 
 :root {
     --sidebar-button-active: #B4CD93;
-    --body-background: #FFFFFF;
-    --sidebar-background: #E5E5E5;
+    --body-background: #e2e2e5;
+    --sidebar-background: #474A59;
     --sidenav-active: #000000;
-    --sidenav-nonactive: #808080;
+    --sidenav-nonactive: #FFFFFF;
     --text-active: #4C4C4C;
 }
 

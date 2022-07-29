@@ -4,7 +4,7 @@ $('.sidenav>li>a').on('click', (e) => {
     $(e.target).parent('li').addClass('active')
 })
 //Клик на пункт настройки
-$('.settings-nav').on('click', async () => {
+$('#settings').on('click', async () => {
     let response = await fetch('/Admin/Settings');
     if (response.ok) {
         $('#content-main').html(await response.text())

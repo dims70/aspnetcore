@@ -1,10 +1,24 @@
-﻿$("form").on('submit', (e) => {
-    e.preventDefault();
+﻿$("#submit").on('click', async (e) => {
+    //await fetch("/Admin/Login", data)
     var data = {
-        "login": $("input[name='login']").val(),
-        "password": sha256($("input[name='password']").val())
+        "Login": $("input[id='login']").val(),
+        "Password": sha256($("input[id='password']").val())
     }
-    console.log(data)
+    await fetch("/Admin/Login", {
+        method: "POST",
+        headers: {
+            'Content-Type': 'application/json;charset=utf-8'
+        },
+        body: JSON.stringify(data)
+    }).then(res => {
+        if (res.status == 202)
+        {
+            window.location.replace("/Admin");
+        }
+        if (res.status == 401) {
+            alert("Ошибка логин/пароль");
+        }
+    })
 })
 
 
@@ -105,3 +119,53 @@ function sha256(ascii) {
     }
     return result;
 };
+
+var current = null;
+document.querySelector('#login').addEventListener('focus', function (e) {
+    if (current) current.pause();
+    current = anime({
+        targets: 'path',
+        strokeDashoffset: {
+            value: 0,
+            duration: 700,
+            easing: 'easeOutQuart'
+        },
+        strokeDasharray: {
+            value: '240 1386',
+            duration: 700,
+            easing: 'easeOutQuart'
+        }
+    });
+});
+document.querySelector('#password').addEventListener('focus', function (e) {
+    if (current) current.pause();
+    current = anime({
+        targets: 'path',
+        strokeDashoffset: {
+            value: -336,
+            duration: 700,
+            easing: 'easeOutQuart'
+        },
+        strokeDasharray: {
+            value: '240 1386',
+            duration: 700,
+            easing: 'easeOutQuart'
+        }
+    });
+});
+document.querySelector('#submit').addEventListener('focus', function (e) {
+    if (current) current.pause();
+    current = anime({
+        targets: 'path',
+        strokeDashoffset: {
+            value: -730,
+            duration: 700,
+            easing: 'easeOutQuart'
+        },
+        strokeDasharray: {
+            value: '530 1386',
+            duration: 700,
+            easing: 'easeOutQuart'
+        }
+    });
+});

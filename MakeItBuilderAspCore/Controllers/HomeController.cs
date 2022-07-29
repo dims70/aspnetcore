@@ -1,6 +1,7 @@
 ﻿using MakeItBuilderAspCore.Models;
 using MakeItBuilderAspCore.Models.Repositories;
 using MakeItBuilderAspCore.Models.ViewModels;
+using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.Extensions.Logging;
 using System.Diagnostics;
@@ -40,7 +41,6 @@ namespace MakeItBuilderAspCore.Controllers
         {
             return View();
         }
-
         public IActionResult TermsDelivery() => View();
         public IActionResult Basket() => View();
             
